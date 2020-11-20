@@ -11,6 +11,7 @@ import * as methodOverride from "method-override";
 import mongooseConfig from "./config/mongoose";
 import {IndexCtrl} from "./controllers/pages/IndexCtrl";
 import {CalendarsCtrl} from "./controllers/rest/calendars/CalendarsCtrl";
+import {UserCtrl} from "./controllers/user/UserCtrl"
 
 export const rootDir = __dirname;
 
@@ -22,7 +23,8 @@ export const rootDir = __dirname;
   mongoose: mongooseConfig,
   mount: {
     "/rest": [CalendarsCtrl],
-    "/": [IndexCtrl]
+    "/": [IndexCtrl],
+    "/user": [UserCtrl]
   },
   componentsScan: [],
   swagger: [
