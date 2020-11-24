@@ -16,6 +16,7 @@ import {CalendarsCtrl} from "./controllers/rest/calendars/CalendarsCtrl";
 import {UserCtrl} from "./controllers/user/UserCtrl";
 import {User} from "./models/User";
 import {PassportCtrl} from "./controllers/passport/PassportCtrl";
+import {EnergyCtrl} from "./controllers/energy/EnergyCtrl";
 
 export const rootDir = __dirname;
 
@@ -28,7 +29,9 @@ export const rootDir = __dirname;
   mount: {
     "/rest": [
       CalendarsCtrl,
-      PassportCtrl],
+      PassportCtrl,
+      EnergyCtrl,  
+    ],
     "/": [IndexCtrl],
     "/user": [UserCtrl]
   },
