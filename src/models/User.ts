@@ -1,23 +1,22 @@
 import {Property, Required} from "@tsed/common";
 import {Model, ObjectID} from "@tsed/mongoose";
+import { Ignore } from '@tsed/schema';
+import { request } from 'http';
+import { UserCreation } from './UserCreation';
 
 @Model()
-export class User {
+export class User extends UserCreation{
   @ObjectID("id")
   _id: string;
 
-  @Required()
-  email: string
-
-  @Required()
-  email_verified: Boolean
-  
-  @Required()
-  key_for_verify: Boolean
-
-  @Required()
-  name: string;
-
+  @Ignore()
   @Property()
   password: string;
+
+  @Property()
+  email: string;
+
+  verifyPassword(password: string) {
+    return this.password === password;
+  }
 }

@@ -3,7 +3,7 @@ import {Authenticate, Authorize} from "@tsed/passport";
 import {Returns, Security} from "@tsed/schema";
 import {Credentials} from "../../models/Credentials"
 import {User} from "../../models/User";
-// import {UserCreation} from "../../models/UserCreation";
+import {UserCreation} from "../../models/UserCreation";
 
 @Controller("/auth")
 export class PassportCtrl {
@@ -22,7 +22,7 @@ export class PassportCtrl {
   @Post("/signup")
   @Returns(201, User)
   @Authenticate("signup")
-  signup(@Req() req: Req, @BodyParams() user: User) {
+  signup(@Req() req: Req, @BodyParams() user: UserCreation) {
     // FACADE
     return req.user;
   }

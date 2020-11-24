@@ -16,6 +16,7 @@ import {CalendarsCtrl} from "./controllers/rest/calendars/CalendarsCtrl";
 import {UserCtrl} from "./controllers/user/UserCtrl";
 import {User} from "./models/User";
 import {PassportCtrl} from "./controllers/passport/PassportCtrl";
+
 export const rootDir = __dirname;
 
 @Configuration({
